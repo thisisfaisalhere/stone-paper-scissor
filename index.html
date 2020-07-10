@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="scoreboard">
+            <div class="player-score">
+                <p class="tag player-name">Player</p>
+                <p class="score score-player">0</p>
+            </div>
+            <div class="computer-score">
+                <p class="tag">Computer</p>
+                <p class="score score-computer">0</p>
+            </div>
+        </div>
+        <div class="game">
+            <div class="showcase">
+                <p class="showcase-text">Are you ready for some fun?</br>Start the game!</p>
+                <input type="text" class="player-name__input" name="player-name" id="player-name__input" value="Player">
+                <button class="start-button">Start Game</button>
+            </div>
+            <div class="play-game game-hidden">
+                <div class="hands">
+                    <div class="player-hand">
+                        <img class="player-hand__img" src="/assets/rock.png" alt="">
+                    </div>
+                    <div class="computer-hand">
+                        <img class="computer-hand__img" src="/assets/rock.png" alt="">
+                    </div>
+                </div>
+                <div class="options">
+                    <button class="option" onclick="rock()">Rock</button>
+                    <button class="option" onclick="paper()">Paper</button>
+                    <button class="option" onclick="scissors()">Scissors</button>
+                </div>
+            </div>
+            <div class="result">
+                <p class="result-text">Lorem, ipsum dolor.</p>
+                <button class="play-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bangers', cursive;
+  color: #c9c9c9;
+}
+
+body .container {
+  height: 100vh;
+  background-image: linear-gradient(120deg, #2F0B1F, #8F142A);
+}
+
+body .container .scoreboard {
+  position: fixed;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 5rem;
+  padding: 2rem;
+}
+
+body .container .scoreboard .player-score .tag,
+body .container .scoreboard .computer-score .tag {
+  font-size: 2rem;
+}
+
+body .container .scoreboard .player-score .score,
+body .container .scoreboard .computer-score .score {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+body .container .game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+body .container .game .showcase,
+body .container .game .result {
+  background: #2F0B1F;
+  padding: 5rem;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: visible;
+  position: absolute;
+  z-index: 10;
+  opacity: 1;
+}
+
+body .container .game .showcase .showcase-text,
+body .container .game .showcase .result-text,
+body .container .game .result .showcase-text,
+body .container .game .result .result-text {
+  color: #c9c9c9;
+  font-size: 2rem;
+  text-align: center;
+}
+
+body .container .game .showcase .player-name__input,
+body .container .game .result .player-name__input {
+  margin-top: 1rem;
+  background: none;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #D73128;
+  color: #c9c9c9;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+body .container .game .showcase .player-name__input:focus,
+body .container .game .result .player-name__input:focus {
+  border-color: #c58b88;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+body .container .game .showcase .start-button,
+body .container .game .showcase .play-button,
+body .container .game .result .start-button,
+body .container .game .result .play-button {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
+  background: none;
+  color: #c9c9c9;
+  border: 1px solid #D73128;
+  border-radius: 5rem;
+  padding: 1rem;
+  width: 10rem;
+  cursor: pointer;
+}
+
+body .container .game .showcase .start-button:hover,
+body .container .game .result .start-button:hover {
+  background-color: #D73128;
+  width: 15rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .container .game .showcase .play-button:hover,
+body .container .game .result .play-button:hover {
+  background-color: #D73128;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .container .game .showcase .start-button:focus,
+body .container .game .showcase .play-button:focus,
+body .container .game .result .start-button:focus,
+body .container .game .result .play-button:focus {
+  outline: none;
+}
+
+body .container .game .result {
+  visibility: hidden;
+}
+
+body .container .game .result .play-button {
+  pointer-events: none;
+}
+
+body .container .game .showcase-hidden {
+  visibility: hidden;
+  -webkit-transform: translateY(-100rem);
+          transform: translateY(-100rem);
+  pointer-events: none;
+  z-index: -10;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body .container .game .play-game {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: visible;
+}
+
+body .container .game .play-game .hands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .game .play-game .hands .player-hand img {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+body .container .game .play-game .options {
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .game .play-game .options .option {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
+  background: none;
+  color: #c9c9c9;
+  border: 1px solid #D73128;
+  border-radius: 5rem;
+  padding: 1rem;
+  width: 8rem;
+  cursor: pointer;
+}
+
+body .container .game .play-game .options .option:hover {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  background-color: #D73128;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .container .game .play-game .options .option:focus {
+  outline: none;
+}
+
+body .container .game .game-hidden {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media (max-width: 38rem) {
+  body .container {
+    height: 100vh;
+    width: 100vw;
+  }
+  body .container .scoreboard {
+    padding: 1rem;
+  }
+  body .container .game {
+    height: 100%;
+  }
+  body .container .game .showcase,
+  body .container .game .result {
+    width: 90%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  body .container .game .showcase .showcase-text,
+  body .container .game .showcase .result-text,
+  body .container .game .result .showcase-text,
+  body .container .game .result .result-text {
+    font-size: 1.5rem;
+  }
+  body .container .game .showcase .player-name__input,
+  body .container .game .result .player-name__input {
+    margin-top: 0.5rem;
+    width: 12rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+  body .container .game .showcase .start-button,
+  body .container .game .showcase .play-button,
+  body .container .game .result .start-button,
+  body .container .game .result .play-button {
+    margin-top: 1rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    width: 8rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  body .container .game .showcase .start-button:hover,
+  body .container .game .result .start-button:hover {
+    width: 10rem;
+    background-color: #D73128;
+  }
+  body .container .game .play-game {
+    width: 90%;
+    height: 100vh;
+  }
+  body .container .game .play-game .hands {
+    -webkit-box-flex: 5;
+        -ms-flex: 5;
+            flex: 5;
+  }
+  body .container .game .play-game .hands img {
+    width: 10rem;
+    height: auto;
+  }
+  body .container .game .play-game .options {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 0.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .container .game .play-game .options .option {
+    margin: 0.5rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-radius: 2rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
